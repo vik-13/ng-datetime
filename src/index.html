@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app">
+<html lang="en" ng-app="app" ng-controller="AppController as $ctrl">
 <head>
     <meta charset="UTF-8">
     <title>ng-datetime</title>
@@ -17,7 +17,10 @@
 </head>
 <body>
 <div style="width: 210px;">
-    <ng-datetime></ng-datetime>
+    <div>
+        <input type="text" ng-datetime ng-model="$ctrl.data.date" />
+        <div>{{date}}</div>
+    </div>
 </div>
 
     <!-- inject:js -->
