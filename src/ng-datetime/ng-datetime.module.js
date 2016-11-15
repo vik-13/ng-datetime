@@ -1,2 +1,4 @@
 angular
-    .module('ng-datetime', []);
+    .module('ng-datetime', [
+        'templates'
+    ]);

@@ -1,0 +1,77 @@
+.ng-datetime {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+
+  .ng-datetime-date {
+    .ng-datetime-navigation {
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      height: 30px;
+      line-height: 30px;
+
+      a {
+        display: inline-block;
+        width: 30px;
+        color: black;
+        text-decoration: none;
+        text-align: center;
+
+        &:hover {
+          background-color: #e3e3e3;
+          text-decoration: none;
+        }
+      }
+
+      span {
+        flex: 1;
+        text-align: center;
+      }
+    }
+
+    .ng-datetime-weekdays {
+      display: flex;
+
+      .ng-datetime-weekday {
+        width: 14.28%;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        font-weight: bold;
+      }
+    }
+
+    .ng-datetime-dates {
+      display: flex;
+      flex-wrap: wrap;
+
+      .ng-datetime-day {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        cursor: pointer;
+
+        &.inactive {
+          color: #cccccc;
+          cursor: default;
+
+          &:hover {
+            background-color: #ffffff;
+          }
+        }
+
+        &.today {
+          background-color: #f0f0f0;
+        }
+
+        &.selected {
+          background-color: #e3e3e3;
+        }
+
+        &:hover {
+          background-color: #e3e3e3;
+        }
+      }
+    }
+  }
+}

@@ -1,2 +1,4 @@
 angular
-    .module('app', []);
+    .module('app', [
+        'ng-datetime'
+    ]);

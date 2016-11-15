@@ -1,0 +1,23 @@
+<div class="ng-datetime">
+    <div class="ng-datetime-date">
+        <div class="ng-datetime-navigation">
+            <a href="#" ng-click="$ctrl.prev($event)">&lt;</a>
+            <span>{{$ctrl.getTitle()}}</span>
+            <a href="#" ng-click="$ctrl.next($event)">&gt;</a>
+        </div>
+        <div class="ng-datetime-weekdays">
+            <span class="ng-datetime-weekday" ng-repeat="weekday in $ctrl.data.weekdays">{{weekday}}</span>
+        </div>
+        <div class="ng-datetime-dates" ng-click="$ctrl.select($event)">
+            <span class="ng-datetime-day"
+                  date="{{day.date}}"
+                  ng-class="{inactive: !day.status, today: day.date == $ctrl.today, selected: day.date == $ctrl.selected && day.status}"
+                  ng-repeat="day in $ctrl.data.days">{{day.day}}</span>
+        </div>
+    </div>
+    <div class="ng-datetime-time">
+        <div class="ng-datetime-show-time"></div>
+        <div class="ng-datetime-hours"></div>
+        <div class="ng-datetime-minutes"></div>
+    </div>
+</div>
