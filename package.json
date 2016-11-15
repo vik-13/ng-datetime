@@ -1,0 +1,24 @@
+{
+  "name": "ng-datetime",
+  "version": "0.0.1",
+  "description": "Simple date and time picker for angular 1.x",
+  "main": "",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "moment": "^2.15.1"
+  },
+  "devDependencies": {
+    "gulp": "",
+    "bower": "",
+    "del": "",
+    "event-stream": "",
+    "gulp-angular-filesort": "",
+    "gulp-concat": "",
+    "gulp-inject": "",
+    "gulp-ng-html2js": "",
+    "gulp-sass": "",
+    "gulp-ng-annotate":""
+  },
+  "author": "Viktor Uhryn",
+  "license": "MIT"
+}
