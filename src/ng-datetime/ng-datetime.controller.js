@@ -14,8 +14,8 @@
             angular.element($element).on('click', open);
 
             function select(date) {
-                $scope.date = date;
-                $scope.ngModel.$setViewValue(date);
+                $scope.date = moment(date).format($scope.format);
+                $scope.ngModel.$setViewValue($scope.date);
                 $scope.ngModel.$render();
                 remove();
             }

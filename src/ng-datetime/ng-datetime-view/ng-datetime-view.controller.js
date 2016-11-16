@@ -8,7 +8,7 @@
             var ctrl = this;
 
             ctrl.today = moment().format('YYYY-MM-DD');
-            ctrl.selected = $scope.date ? moment($scope.date, $scope.format).format('YYYY-MM-DD') : ctrl.today;
+            ctrl.selected = $scope.date ? moment($scope.date).format('YYYY-MM-DD') : ctrl.today;
             ctrl.view = moment(ctrl.selected).startOf('month');
             ctrl.data = ngDatetimeViewService.get(ctrl.view.format('YYYY-MM'));
 
@@ -43,7 +43,7 @@
                 if (date && ctrl.view.format('YYYY-MM') == moment(date).format('YYYY-MM')) {
                     ctrl.selected = moment(date).format('YYYY-MM-DD');
                 }
-                onSelect(moment(ctrl.selected).format($scope.format));
+                onSelect(ctrl.selected);
             }
 
             function update() {
