@@ -9,7 +9,9 @@
                 restrict: 'A',
                 replace: false,
                 require: 'ngModel',
-                scope: {},
+                scope: {
+                    format: '@'
+                },
                 controller: 'NgDatetimeController',
                 link: link
             };

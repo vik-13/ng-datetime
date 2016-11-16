@@ -4,13 +4,13 @@
         .controller('NgDatetimeViewController', NgDatetimeViewController);
 
         /* ngInject */
-        function NgDatetimeViewController($scope, onSelect, ngDatetimeService) {
+        function NgDatetimeViewController($scope, onSelect, ngDatetimeViewService) {
             var ctrl = this;
 
             ctrl.today = moment().format('YYYY-MM-DD');
-            ctrl.selected = $scope.date ? moment($scope.date).format('YYYY-MM-DD') : ctrl.today;
+            ctrl.selected = $scope.date ? moment($scope.date, $scope.format).format('YYYY-MM-DD') : ctrl.today;
             ctrl.view = moment(ctrl.selected).startOf('month');
-            ctrl.data = ngDatetimeService.get(ctrl.view.format('YYYY-MM'));
+            ctrl.data = ngDatetimeViewService.get(ctrl.view.format('YYYY-MM'));
 
             ctrl.getTitle = getTitle;
             ctrl.prev = prev;
@@ -43,11 +43,11 @@
                 if (date && ctrl.view.format('YYYY-MM') == moment(date).format('YYYY-MM')) {
                     ctrl.selected = moment(date).format('YYYY-MM-DD');
                 }
-                onSelect(ctrl.selected);
+                onSelect(moment(ctrl.selected).format($scope.format));
             }
 
             function update() {
-                angular.extend(ctrl.data, ngDatetimeService.get(ctrl.view.format('YYYY-MM')));
+                angular.extend(ctrl.data, ngDatetimeViewService.get(ctrl.view.format('YYYY-MM')));
             }
         }
 })();

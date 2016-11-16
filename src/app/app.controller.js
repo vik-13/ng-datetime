@@ -7,7 +7,7 @@
         function AppController() {
             var ctrl = this;
             ctrl.data = {
-                date: '2016-11-19'
+                date: '2016/11/19 11:12:23'
             };
         }
 })();

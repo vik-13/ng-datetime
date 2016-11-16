@@ -18,8 +18,17 @@
 <body>
 <div style="width: 210px;">
     <div>
-        <input type="text" ng-datetime ng-model="$ctrl.data.date" />
-        <div>{{date}}</div>
+        <input type="text"
+               ng-model="$ctrl.data.date"
+               ng-datetime format="YYYY/MM/DD HH:mm:ss"/>
+
+        <input type="text"
+               ng-model="$ctrl.data.date2"
+               ng-datetime format="YYYY/MM/DD"/>
+
+        <input type="text"
+               ng-model="$ctrl.data.date3"
+               ng-datetime format="YYYY-MM-DD"/>
     </div>
 </div>
 

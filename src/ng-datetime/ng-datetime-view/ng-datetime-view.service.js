@@ -1,10 +1,10 @@
 ;(function() {
     angular
-        .module('ng-datetime')
-        .factory('ngDatetimeService', ngDatetimeService);
+        .module('ng-datetime-view')
+        .factory('ngDatetimeViewService', ngDatetimeViewService);
 
         /* ngInject */
-        function ngDatetimeService() {
+        function ngDatetimeViewService() {
             return {
                 get: get
             };
