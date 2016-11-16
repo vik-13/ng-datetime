@@ -4,45 +4,19 @@
         .directive('ngDatetime', ngDatetime);
 
         /* ngInject */
-        function ngDatetime($document, $compile, $controller, $templateRequest) {
+        function ngDatetime() {
             return {
                 restrict: 'A',
                 replace: false,
                 require: 'ngModel',
                 scope: {},
-                controller: 'NgDatetimeController as $ctrl',
+                controller: 'NgDatetimeController',
                 link: link
             };
 
             function link(scope, element, attrs, ngModel) {
-
-                scope.select = select;
-                angular.element(element).bind('click', show);
-
-                function select(date) {
-                    ngModel.$setViewValue(date);
-                    ngModel.$render();
-                }
-
-                function show() {
-                    $templateRequest('ng-datetime-view/ng-datetime-view.tpl.html')
-                        .then(function(html) {
-                            inject(html);
-                        });
-                }
-
-                function inject(html) {
-                    var localScope = scope.$new(true),
-                        template = angular.element(html),
-                        body = $document.find('body').eq(0),
-                        locals = {
-                            onSelect: select
-                        };
-
-                    body.append(template);
-                    $compile(template)(localScope);
-                    $controller('NgDatetimeViewController as $ctrl', locals ? angular.extend({$scope: localScope}, locals) : {$scope: localScope});
-                }
+                scope.ngModel = ngModel;
+                scope.$watch('ngModel.$modelValue', scope.changeModel);
             }
         }
 })();

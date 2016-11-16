@@ -4,11 +4,11 @@
         .controller('NgDatetimeViewController', NgDatetimeViewController);
 
         /* ngInject */
-        function NgDatetimeViewController(onSelect, ngDatetimeService) {
+        function NgDatetimeViewController($scope, onSelect, ngDatetimeService) {
             var ctrl = this;
 
             ctrl.today = moment().format('YYYY-MM-DD');
-            ctrl.selected = ctrl.date ? moment(ctrl.date).format('YYYY-MM-DD') : ctrl.today;
+            ctrl.selected = $scope.date ? moment($scope.date).format('YYYY-MM-DD') : ctrl.today;
             ctrl.view = moment(ctrl.selected).startOf('month');
             ctrl.data = ngDatetimeService.get(ctrl.view.format('YYYY-MM'));
 
