@@ -20,15 +20,21 @@
     <div>
         <input type="text"
                ng-model="$ctrl.data.date"
-               ng-datetime format="YYYY/MM/DD HH:mm:ss"/>
+               ng-datetime
+               show-type="datetime"
+               format="YYYY/MM/DD HH:mm:ss"/>
 
         <input type="text"
                ng-model="$ctrl.data.date2"
-               ng-datetime format="YYYY/MM/DD"/>
+               ng-datetime
+               show-type="date"
+               format="YYYY/MM/DD"/>
 
         <input type="text"
                ng-model="$ctrl.data.date3"
-               ng-datetime format="YYYY-MM-DD"/>
+               ng-datetime
+               show-type="time"
+               format="YYYY-MM-DD"/>
     </div>
 </div>
 

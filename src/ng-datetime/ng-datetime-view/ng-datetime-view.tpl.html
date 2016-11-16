@@ -1,4 +1,4 @@
-<div class="ng-datetime">
+<div class="ng-datetime" ng-class="$ctrl.type">
     <div class="ng-datetime-date">
         <div class="ng-datetime-navigation">
             <a href="#" ng-click="$ctrl.prev($event)">&lt;</a>
@@ -6,18 +6,18 @@
             <a href="#" ng-click="$ctrl.next($event)">&gt;</a>
         </div>
         <div class="ng-datetime-weekdays">
-            <span class="ng-datetime-weekday" ng-repeat="weekday in $ctrl.data.weekdays">{{weekday}}</span>
+            <span class="ng-datetime-weekday" ng-repeat="weekday in $ctrl.calendar.weekdays">{{weekday}}</span>
         </div>
         <div class="ng-datetime-dates" ng-click="$ctrl.select($event)">
             <span class="ng-datetime-day"
-                  date="{{day.date}}"
-                  ng-class="{inactive: !day.status, today: day.date == $ctrl.today, selected: day.date == $ctrl.selected && day.status}"
-                  ng-repeat="day in $ctrl.data.days">{{day.day}}</span>
+                  date="{{day.date.format('YYYY-MM-DD')}}"
+                  ng-class="{inactive: !day.status, today: day.date.format('YYYY-MM-DD') == $ctrl.today.format('YYYY-MM-DD'), selected: day.date.format('YYYY-MM-DD') == $ctrl.selected.format('YYYY-MM-DD') && day.status}"
+                  ng-repeat="day in $ctrl.calendar.days">{{day.day}}</span>
         </div>
     </div>
     <div class="ng-datetime-time">
-        <div class="ng-datetime-show-time"></div>
-        <div class="ng-datetime-hours"></div>
-        <div class="ng-datetime-minutes"></div>
+        <div class="ng-datetime-show-time">{{$ctrl.showTime()}}</div>
+        <div class="ng-datetime-hours"><label>Hours:</label><input type="range" min="0" max="23" ng-model="$ctrl.hours" ng-change="$ctrl.updateTime()"/></div>
+        <div class="ng-datetime-minutes"><label>Minutes:</label><input type="range" min="0" max="59" ng-model="$ctrl.minutes" ng-change="$ctrl.updateTime()"/></div>
     </div>
 </div>

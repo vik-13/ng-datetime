@@ -9,6 +9,18 @@
   border: 1px solid rgba(0, 0, 0, 0.25);
   background-color: #ffffff;
 
+  &.date {
+    .ng-datetime-time {
+      display: none;
+    }
+  }
+
+  &.time {
+    .ng-datetime-date {
+      display: none;
+    }
+  }
+
   .ng-datetime-date {
     .ng-datetime-navigation {
       display: flex;
@@ -80,6 +92,19 @@
           background-color: #e3e3e3;
         }
       }
+    }
+  }
+
+  .ng-datetime-time {
+    padding-top: 10px;
+
+    .ng-datetime-show-time {
+      text-align: center;
+      font-size: 20px;
+    }
+
+    input {
+      width: 100%;
     }
   }
 }

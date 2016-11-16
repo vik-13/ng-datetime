@@ -10,7 +10,8 @@
                 replace: false,
                 require: 'ngModel',
                 scope: {
-                    format: '@'
+                    format: '@',
+                    showType: '@'
                 },
                 controller: 'NgDatetimeController',
                 link: link

@@ -35,7 +35,7 @@
                 while (start < end) {
                     days.push({
                         day: start.format('D'),
-                        date: start.format('YYYY-MM-DD'),
+                        date: start.clone(),
                         status: start.format('MM') == moment(date).format('MM')
                     });
                     start.add(1, 'days');
