@@ -13,11 +13,13 @@
             $scope.changeModel = changeModel;
             angular.element($element).on('click', open);
 
-            function select(date) {
+            function select(date, closeAfter) {
                 $scope.date = moment(date).format($scope.format);
                 $scope.ngModel.$setViewValue($scope.date);
                 $scope.ngModel.$render();
-                remove();
+                if (closeAfter) {
+                    remove();
+                }
             }
 
             function changeModel(date) {
@@ -33,7 +35,7 @@
             }
 
             function close(event) {
-                if ( $scope.instance && !$scope.instance[0].contains(event.target)) {
+                if ($scope.instance && !$scope.instance[0].contains(event.target)) {
                     remove();
                 }
             }

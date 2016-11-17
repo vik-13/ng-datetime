@@ -52,14 +52,17 @@
 
                 date = angular.element(event.target).attr('date');
                 if (date && ctrl.view.format('YYYY-MM') == moment(date).format('YYYY-MM')) {
-                    ctrl.selected = moment(date);
+                    ctrl.selected.year(moment(date).year());
+                    ctrl.selected.month(moment(date).month());
+                    ctrl.selected.date(moment(date).date());
                 }
-                onSelect(ctrl.selected);
+                onSelect(ctrl.selected, true);
             }
 
             function updateTime() {
                 ctrl.selected.hour(ctrl.hours);
                 ctrl.selected.minute(ctrl.minutes);
+                onSelect(ctrl.selected);
             }
 
             function update() {
