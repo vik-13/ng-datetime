@@ -11,7 +11,7 @@
         <div class="ng-datetime-dates" ng-click="$ctrl.select($event)">
             <span class="ng-datetime-day"
                   date="{{day.date.format('YYYY-MM-DD')}}"
-                  ng-class="{inactive: !day.status, today: day.date.format('YYYY-MM-DD') == $ctrl.today.format('YYYY-MM-DD'), selected: day.date.format('YYYY-MM-DD') == $ctrl.selected.format('YYYY-MM-DD') && day.status}"
+                  ng-class="{inactive: $ctrl.isInactive(day), today: day.date.format('YYYY-MM-DD') == $ctrl.today.format('YYYY-MM-DD'), selected: day.date.format('YYYY-MM-DD') == $ctrl.selected.format('YYYY-MM-DD') && day.status}"
                   ng-repeat="day in $ctrl.calendar.days">{{day.day}}</span>
         </div>
     </div>

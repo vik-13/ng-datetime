@@ -11,7 +11,9 @@
                 require: 'ngModel',
                 scope: {
                     format: '@',
-                    showType: '@'
+                    showType: '@',
+                    minDate: '@',
+                    maxDate: '@'
                 },
                 controller: 'NgDatetimeController',
                 link: link
