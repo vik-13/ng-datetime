@@ -10,7 +10,7 @@
             ctrl.type = $scope.showType || 'datetime';
 
             ctrl.today = moment();
-            ctrl.selected = $scope.date ? moment($scope.date) : ctrl.today.clone();
+            ctrl.selected = $scope.date ? moment($scope.date, $scope.format) : ctrl.today.clone();
             ctrl.view = moment(ctrl.selected).startOf('month');
             ctrl.calendar = ngDatetimeViewService.get(ctrl.view.format('YYYY-MM'));
 
